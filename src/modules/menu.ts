@@ -74,11 +74,20 @@ async function handleConvertCommand() {
 
     // 显示结果通知
     if (result.success) {
-      showNotification(
-        getString("notification-success"),
-        "success"
-      );
+      // 记录日志
+      ztoolkit.log(`Paper2MD: 转换成功，Markdown保存到: ${result.markdownPath}`);
+      if (result.imagesDir) {
+        ztoolkit.log(`Paper2MD: 图像保存到: ${result.imagesDir}`);
+      }
+
+      // 显示成功通知（合并路径信息）
+      const successMessage = result.markdownPath
+        ? `${getString("notification-success")}\n${result.markdownPath}`
+        : getString("notification-success");
+
+      showNotification(successMessage, "success", 6000);
     } else {
+      ztoolkit.log(`Paper2MD: 转换失败: ${result.error}`);
       showNotification(
         `${getString("notification-failed")}: ${result.error}`,
         "error"
