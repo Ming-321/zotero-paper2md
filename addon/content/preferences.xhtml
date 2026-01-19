@@ -5,25 +5,44 @@
   onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window })"
 >
   <label><html:h2 data-l10n-id="pref-title"></html:h2></label>
-  <checkbox
-    id="zotero-prefpane-__addonRef__-enable"
-    preference="enable"
-    data-l10n-id="pref-enable"
-  />
-  <hbox>
-    <html:label
-      for="zotero-prefpane-__addonRef__-input"
-      data-l10n-id="pref-input"
-    ></html:label>
-    <html:input
-      type="text"
-      id="zotero-prefpane-__addonRef__-input"
-      preference="input"
-    ></html:input>
-  </hbox>
-  <hbox class="virtualized-table-container" flex="1" height="300px">
-    <html:div id="__addonRef__-table-container" />
-  </hbox>
+
+  <!-- MinerU API 设置 -->
+  <groupbox>
+    <label><html:h3 data-l10n-id="pref-mineru-title"></html:h3></label>
+
+    <!-- API Key -->
+    <hbox align="center">
+      <html:label
+        for="zotero-prefpane-__addonRef__-mineru-api-key"
+        data-l10n-id="pref-mineru-api-key"
+        style="min-width: 120px;"
+      ></html:label>
+      <html:input
+        type="password"
+        id="zotero-prefpane-__addonRef__-mineru-api-key"
+        preference="mineruApiKey"
+        style="flex: 1; min-width: 300px;"
+      ></html:input>
+    </hbox>
+
+    <!-- API URL -->
+    <hbox align="center" style="margin-top: 8px;">
+      <html:label
+        for="zotero-prefpane-__addonRef__-mineru-api-url"
+        data-l10n-id="pref-mineru-api-url"
+        style="min-width: 120px;"
+      ></html:label>
+      <html:input
+        type="text"
+        id="zotero-prefpane-__addonRef__-mineru-api-url"
+        preference="mineruApiUrl"
+        style="flex: 1; min-width: 300px;"
+      ></html:input>
+    </hbox>
+
+    <!-- 说明文字 -->
+    <html:p data-l10n-id="pref-mineru-description" style="margin-top: 8px; color: #666; font-size: 12px;"></html:p>
+  </groupbox>
 </groupbox>
 <vbox>
   <html:label

@@ -1,11 +1,23 @@
-startup-begin = 插件加载中
-startup-finish = 插件已就绪
-menuitem-label = 插件模板: 帮助工具样例
-menupopup-label = 插件模板: 弹出菜单
-menuitem-submenulabel = 插件模板：子菜单
-menuitem-filemenulabel = 插件模板: 文件菜单
-prefs-title = 插件模板
-prefs-table-title = 标题
-prefs-table-detail = 详情
-tabpanel-lib-tab-label = 库标签
-tabpanel-reader-tab-label = 阅读器标签
+startup-begin = Paper2MD 加载中
+startup-finish = Paper2MD 已就绪
+prefs-title = Paper2MD
+
+# 菜单
+menu-convert-to-markdown = 转换为 Markdown
+
+# 通知
+notification-no-selection = 请先选择一个条目
+notification-single-only = 目前仅支持单个条目转换
+notification-no-pdf = 所选条目没有 PDF 附件
+notification-success = 转换成功完成
+notification-failed = 转换失败
+notification-error = 发生错误
+
+# 进度
+progress-title = 正在将 PDF 转换为 Markdown
+progress-pending = 排队等待中...
+progress-running = 正在解析: { $current }/{ $total } 页
+progress-processing = 处理中...
+progress-converting = 格式转换中...
+progress-done = 完成
+progress-failed = 失败
