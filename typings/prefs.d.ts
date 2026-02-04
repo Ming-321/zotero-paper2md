@@ -9,6 +9,11 @@ declare namespace _ZoteroTypes {
     PluginPrefsMap: {
       "mineruApiKey": string;
       "mineruApiUrl": string;
+      "aiProvider": string;
+      "aiApiUrl": string;
+      "aiApiKey": string;
+      "aiModel": string;
+      "aiAutoSummarize": boolean;
     };
   }
 }

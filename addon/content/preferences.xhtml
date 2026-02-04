@@ -1,52 +1,103 @@
 <linkset>
   <html:link rel="localization" href="__addonRef__-preferences.ftl" />
 </linkset>
-<groupbox
-  onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window })"
->
-  <label><html:h2 data-l10n-id="pref-title"></html:h2></label>
+<groupbox onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window })">
+  <label>
+    <html:h2 data-l10n-id="pref-title"></html:h2>
+  </label>
 
   <!-- MinerU API 设置 -->
   <groupbox>
-    <label><html:h3 data-l10n-id="pref-mineru-title"></html:h3></label>
+    <label>
+      <html:h3 data-l10n-id="pref-mineru-title"></html:h3>
+    </label>
 
     <!-- API Key -->
     <hbox align="center">
-      <html:label
-        for="zotero-prefpane-__addonRef__-mineru-api-key"
-        data-l10n-id="pref-mineru-api-key"
-        style="min-width: 120px;"
-      ></html:label>
-      <html:input
-        type="password"
-        id="zotero-prefpane-__addonRef__-mineru-api-key"
-        preference="mineruApiKey"
-        style="flex: 1; min-width: 300px;"
-      ></html:input>
+      <html:label for="zotero-prefpane-__addonRef__-mineru-api-key" data-l10n-id="pref-mineru-api-key"
+        style="min-width: 120px;"></html:label>
+      <html:input type="password" id="zotero-prefpane-__addonRef__-mineru-api-key" preference="mineruApiKey"
+        style="flex: 1; min-width: 300px;"></html:input>
     </hbox>
 
     <!-- API URL -->
     <hbox align="center" style="margin-top: 8px;">
-      <html:label
-        for="zotero-prefpane-__addonRef__-mineru-api-url"
-        data-l10n-id="pref-mineru-api-url"
-        style="min-width: 120px;"
-      ></html:label>
-      <html:input
-        type="text"
-        id="zotero-prefpane-__addonRef__-mineru-api-url"
-        preference="mineruApiUrl"
-        style="flex: 1; min-width: 300px;"
-      ></html:input>
+      <html:label for="zotero-prefpane-__addonRef__-mineru-api-url" data-l10n-id="pref-mineru-api-url"
+        style="min-width: 120px;"></html:label>
+      <html:input type="text" id="zotero-prefpane-__addonRef__-mineru-api-url" preference="mineruApiUrl"
+        style="flex: 1; min-width: 300px;"></html:input>
     </hbox>
 
     <!-- 说明文字 -->
     <html:p data-l10n-id="pref-mineru-description" style="margin-top: 8px; color: #666; font-size: 12px;"></html:p>
   </groupbox>
+
+  <!-- AI 总结服务设置 -->
+  <groupbox style="margin-top: 16px;">
+    <label>
+      <html:h3 data-l10n-id="pref-ai-title"></html:h3>
+    </label>
+
+    <!-- Provider 选择 -->
+    <hbox align="center">
+      <html:label for="zotero-prefpane-__addonRef__-ai-provider" data-l10n-id="pref-ai-provider"
+        style="min-width: 120px;"></html:label>
+      <html:select id="zotero-prefpane-__addonRef__-ai-provider" preference="aiProvider" style="min-width: 200px;">
+        <html:option value="openai">OpenAI</html:option>
+        <html:option value="deepseek">DeepSeek</html:option>
+        <html:option value="zhipu">智谱 AI (GLM)</html:option>
+        <html:option value="qwen">通义千问</html:option>
+        <html:option value="custom" data-l10n-id="pref-ai-provider-custom"></html:option>
+      </html:select>
+    </hbox>
+
+    <!-- API URL -->
+    <hbox align="center" style="margin-top: 8px;">
+      <html:label for="zotero-prefpane-__addonRef__-ai-api-url" data-l10n-id="pref-ai-api-url"
+        style="min-width: 120px;"></html:label>
+      <html:input type="text" id="zotero-prefpane-__addonRef__-ai-api-url" preference="aiApiUrl"
+        style="flex: 1; min-width: 300px;" placeholder="使用预设时可留空"></html:input>
+    </hbox>
+
+    <!-- API Key -->
+    <hbox align="center" style="margin-top: 8px;">
+      <html:label for="zotero-prefpane-__addonRef__-ai-api-key" data-l10n-id="pref-ai-api-key"
+        style="min-width: 120px;"></html:label>
+      <html:input type="password" id="zotero-prefpane-__addonRef__-ai-api-key" preference="aiApiKey"
+        style="flex: 1; min-width: 300px;"></html:input>
+    </hbox>
+
+    <!-- Model -->
+    <hbox align="center" style="margin-top: 8px;">
+      <html:label for="zotero-prefpane-__addonRef__-ai-model" data-l10n-id="pref-ai-model" style="min-width: 120px;">
+      </html:label>
+      <html:input type="text" id="zotero-prefpane-__addonRef__-ai-model" preference="aiModel"
+        style="flex: 1; min-width: 200px;" placeholder="使用预设时可留空"></html:input>
+    </hbox>
+
+    <!-- 测试连接按钮 -->
+    <hbox align="center" style="margin-top: 12px;">
+      <html:label style="min-width: 120px;"></html:label>
+      <html:button id="zotero-prefpane-__addonRef__-ai-test" data-l10n-id="pref-ai-test-button"
+        style="min-width: 100px;"></html:button>
+      <html:span id="zotero-prefpane-__addonRef__-ai-test-result" style="margin-left: 12px; font-size: 12px;">
+      </html:span>
+    </hbox>
+
+    <!-- 自动生成总结选项 -->
+    <hbox align="center" style="margin-top: 12px;">
+      <html:label style="min-width: 120px;"></html:label>
+      <html:input type="checkbox" id="zotero-prefpane-__addonRef__-ai-auto-summarize" preference="aiAutoSummarize">
+      </html:input>
+      <html:label for="zotero-prefpane-__addonRef__-ai-auto-summarize" data-l10n-id="pref-ai-auto-summarize"
+        style="margin-left: 4px;"></html:label>
+    </hbox>
+
+    <!-- 说明文字 -->
+    <html:p data-l10n-id="pref-ai-description" style="margin-top: 8px; color: #666; font-size: 12px;"></html:p>
+  </groupbox>
 </groupbox>
 <vbox>
-  <html:label
-    data-l10n-id="pref-help"
-    data-l10n-args='{"time": "__buildTime__","name": "__addonName__","version":"__buildVersion__"}'
-  ></html:label>
+  <html:label data-l10n-id="pref-help"
+    data-l10n-args='{"time": "__buildTime__","name": "__addonName__","version":"__buildVersion__"}'></html:label>
 </vbox>

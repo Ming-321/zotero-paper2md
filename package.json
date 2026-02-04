@@ -1,7 +1,7 @@
 {
   "name": "zotero-paper2md",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert PDF papers to Markdown format using MinerU API",
   "config": {
     "addonName": "Paper2MD",
